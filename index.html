@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>نقطة بيضاء</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Segoe UI, Arial, sans-serif;
+}
+
+/* الخلفية المتدرجة */
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#667eea,#764ba2,#89f7fe);
+  color:white;
+}
+
+/* الصفحة الرئيسية */
+.home{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.home h1{
+  font-size:46px;
+  margin-bottom:50px;
+}
+
+/* الكروت */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  justify-content:center;
+}
+
+.card{
+  width:220px;
+  height:130px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.4s;
+  box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.card:nth-child(1){background:linear-gradient(135deg,#56ab2f,#a8e063)}
+.card:nth-child(2){background:linear-gradient(135deg,#2193b0,#6dd5ed)}
+.card:nth-child(3){background:linear-gradient(135deg,#cc2b5e,#753a88)}
+.card:nth-child(4){background:linear-gradient(135deg,#ee9ca7,#ffdde1)}
+.card:nth-child(5){background:linear-gradient(135deg,#42275a,#734b6d)}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.08);
+  filter:brightness(1.1);
+}
+
+/* الأقسام */
+.section{
+  display:none;
+  min-height:100vh;
+  padding:50px 20px;
+}
+
+.section.active{display:block}
+
+/* صندوق النص */
+.box{
+  width:85%;
+  max-width:950px;
+  margin:40px auto;
+  padding:50px;
+  border-radius:35px;
+  color:#111;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);
+  transition:.4s;
+}
+
+.box:hover{
+  transform:scale(1.03);
+}
+
+#s1 .box{background:linear-gradient(135deg,#e0f7fa,#ffffff)}
+#s2 .box{background:linear-gradient(135deg,#f1f8e9,#ffffff)}
+#s3 .box{background:linear-gradient(135deg,#fce4ec,#ffffff)}
+#s4 .box{background:linear-gradient(135deg,#ede7f6,#ffffff)}
+#s5 .box{background:linear-gradient(135deg,#fff3e0,#ffffff)}
+
+.text{
+  font-size:18px;
+  line-height:2;
+}
+
+/* زر الرجوع */
+.back{
+  display:block;
+  margin:30px auto;
+  padding:12px 32px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  transition:.3s;
+}
+
+.back:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+</style>
+</head>
+
+<body>
+
+<div class="home" id="home">
+  <h1>🌍نقطة بيضاء</h1>
+  <div class="cards">
+    <div class="card" onclick="openSection('s1')">تعريف السلام</div>
+    <div class="card" onclick="openSection('s2')">أهمية السلام</div>
+    <div class="card" onclick="openSection('s3')">صناع السلام</div>
+    <div class="card" onclick="openSection('s4')">رمز السلام</div>
+    <div class="card" onclick="openSection('s5')">السلام في المجتمع</div>
+  </div>
+</div>
+
+<!-- تعريف السلام -->
+<div class="section" id="s1">
+  <div class="box">
+    <div class="text">
+السلام ليس مجرد غياب الحرب أو توقف القتال، بل هو حالة شاملة من الاستقرار النفسي والاجتماعي يعيش فيها الإنسان دون خوف أو تهديد. يتحقق السلام عندما تسود العدالة ويشعر كل فرد بأن حقوقه محفوظة وكرامته مصونة. يبدأ السلام من داخل الفرد من خلال التسامح وضبط النفس واحترام الاختلاف، ثم يمتد إلى المجتمع عبر التعاون والحوار وحل النزاعات بطرق إنسانية. المجتمعات التي تبني ثقافة السلام تكون أكثر استقراراً وتقدماً، لأن السلام يخلق بيئة تسمح بالتعلم والعمل والإبداع. لذلك يعتبر السلام أساساً ضرورياً لنهضة الشعوب واستمرار الحضارات.
+    </div>
+  </div>
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- أهمية السلام -->
+<div class="section" id="s2">
+  <div class="box">
+    <div class="text">
+تكمن أهمية السلام في كونه الشرط الأساسي لحياة إنسانية مستقرة وآمنة. في ظل السلام تتجه طاقات المجتمع نحو البناء بدلاً من الصراع، فتتطور العلوم وتزدهر الثقافة ويقوى الاقتصاد. السلام يعزز الثقة بين الناس ويقوي العلاقات الاجتماعية ويمنح الأفراد شعوراً بالانتماء والاستقرار. كما أنه يحمي حقوق الإنسان ويمنع انتشار الخوف والعنف. الدول التي تعيش في سلام تستطيع الاستثمار في التعليم والصحة والتنمية، بينما تؤدي الحروب إلى تدمير الموارد وتعطيل التقدم. لذلك فإن السلام ليس مجرد قيمة أخلاقية، بل هو ضرورة عملية لضمان مستقبل أفضل للبشرية.
+    </div>
+  </div>
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- صناع السلام -->
+<div class="section" id="s3">
+  <div class="box">
+    <div class="text">
+شهد التاريخ شخصيات عظيمة كرست حياتها لنشر السلام وتحقيق العدالة بوسائل سلمية. آمن هؤلاء القادة بأن التغيير الحقيقي لا يتحقق بالقوة بل بالإصرار والصبر والحوار. لقد واجهوا التحديات بروح إنسانية عالية وسعوا إلى توحيد الناس حول قيم مشتركة تقوم على الاحترام والكرامة. إن جهود صناع السلام لم تقتصر على مجتمعاتهم فقط بل امتد تأثيرها إلى العالم بأسره، حيث ألهمت الملايين وأثبتت أن التفاهم والتعاون يمكن أن يغيّرا مجرى التاريخ. دراسة تجاربهم تمنحنا نموذجاً عملياً لكيفية بناء مستقبل أكثر إنسانية.
+    </div>
+  </div>
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- رمز السلام -->
+<div class="section" id="s4">
+  <div class="box">
+    <div class="text">
+تُعد الحمامة البيضاء رمزاً عالمياً للسلام لما تحمله من معاني النقاء والهدوء والأمل. الأجنحة المفتوحة ترمز إلى الحرية والانطلاق بعيداً عن الصراع، بينما يعبر اللون الأبيض عن الصفاء والنية الصادقة. استخدمت الشعوب هذا الرمز عبر التاريخ للتعبير عن التعايش والتفاهم بين البشر. قوة الرموز تكمن في قدرتها على إيصال المعاني العميقة بطريقة بسيطة يفهمها الجميع. لذلك أصبحت الحمامة علامة إنسانية مشتركة تشير إلى رغبة الشعوب في العيش بأمان واستقرار بعيداً عن العنف.
+    </div>
+  </div>
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- السلام في المجتمع -->
+<div class="section" id="s5">
+  <div class="box">
+    <div class="text">
+يتجسد السلام في المجتمع من خلال سلوك الأفراد وعلاقاتهم اليومية القائمة على الاحترام والتعاون. المجتمع السلمي هو الذي يعتمد الحوار لحل النزاعات ويشجع التسامح ويمنع التمييز والعنف. يلعب التعليم دوراً أساسياً في ترسيخ ثقافة السلام لأنه ينمي الوعي ويعزز قيم التفاهم بين الناس. كما أن المشاركة الإيجابية والعمل الجماعي يسهمان في بناء مجتمع قوي ومتماسك. عندما يشعر الإنسان بالأمان والانتماء يصبح أكثر قدرة على الإبداع والعطاء. لذلك يبدأ بناء السلام بخطوات بسيطة يقوم بها كل فرد في حياته اليومية.
+    </div>
+  </div>
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<script>
+function openSection(id){
+  document.getElementById("home").style.display="none";
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+
+function goHome(){
+  document.getElementById("home").style.display="block";
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+}
+</script>
+
+</body>
+</html>
